@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor de Música</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .music-container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+        }
+
+        audio {
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="music-container">
+        <h1>Mi Reproductor de Música</h1>
+
+        <!-- Reproductor de audio -->
+        <audio id="audioPlayer" controls>
+            <source src="que_linda.mp3" type="audio/mp3">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+
+        <!-- Botón para descargar la música -->
+        <button id="downloadBtn">Descargar Música</button>
+    </div>
+
+    <script>
+        // Función para descargar la música al hacer clic en el botón
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            // URL del archivo de música que deseas permitir descargar
+            const songUrl = 'que_linda.mp3'; // Aquí pondrías la URL de la canción si es desde internet
+
+            // Crear un enlace para la descarga del archivo de música
+            const link = document.createElement('a');
+            link.href = songUrl; // Enlace a la canción
+            link.download = 'que_linda.mp3'; // Nombre con el que se descargará el archivo
+            link.click(); // Simular clic para descargar
+        });
+    </script>
+
+</body>
+</html>
+
